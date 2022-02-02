@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondo</title>
+</head>
+    
+    <!-- <input id="btn_ventana" type="button" value="Página Siguiente" onclick="AbreVentana()"> -->
+
+    <select id="slc_color">
+        <option value="Azul">Azul</option>
+        <option value="Rojo">Rojo</option>
+        <option value="Amarillo">Amarillo</option>
+        <option value="Verde">Verde</option>
+        <input id="btn_ventana" type="button" value="Modificar Color" onclick="alert()">
+    </select>
+
+    <script type="text/javascript">
+        
+        function AbreVentana () {
+
+            var VentanaNueva = window.open();
+            VentanaNueva.document.write ("Hola");
+            
+        }
+
+    </script>
+
+</body>
+</html>

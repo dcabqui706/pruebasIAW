@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Rectangulo  </title>
+</head>
+<body>
+    <script>
+
+        class Rectangulo{
+            constructor (ancho,alto) {
+                this.ancho=ancho
+                this.alto=alto
+            }
+            area () {
+                return this.ancho*this.alto;
+            }
+            perimetro (){
+                return 2*(this.ancho*this.alto);
+            }
+        }
+
+        let anchura=prompt ("Anchura del rectangulo");
+        let altura=prompt ("Altura del rectangulo");
+        //Vamos a contruir el primer rectangulo
+        const Rectangulo1=new Rectangulo (anchura,altura);
+
+        document.write ("El ancho del rectangulo es: "+Rectangulo1.ancho+"<br>");
+        document.write ("El alto del rectangulo es: "+Rectangulo1.alto+"<br>");
+
+        //Trabajo con metodos
+        document.write ("El area del rectangulo es: "+Rectangulo1.area()+"<br>");
+        document.write ("El perimtro del rectangulo es: "+Rectangulo1.perimetro()+"<br>");
+
+
+
+
+    </script>
+</body>
+</html>

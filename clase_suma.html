@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circulo</title>
+</head>
+<body>
+    <script>
+
+    class Suma {
+
+        constructor (operando1, operando2) {
+
+        this.operando1=operando1;
+        this.operando2=operando2;
+        }
+
+        suma () {
+
+        return (this.operando1 + this.operando2);
+
+        }
+    }
+
+    let operando1 = Number (prompt ("Introduce el primer operando")) , operando2= Number(prompt("Introduce el segundo operando"));
+
+
+    const Suma1 = new Suma (operando1, operando2);
+
+    document.write ("El primer operando es : " + Suma1.operando1 + "<br>");
+    document.write ("El segundo operando es : " + Suma1.operando2 + "<br>");
+
+    document.write ("La suma de los operando es : " + Suma1.suma() + "<br>");
+
+    </script>
+    
+</body>
+</html>
