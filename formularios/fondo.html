@@ -6,24 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fondo</title>
 </head>
-    
-    <!-- <input id="btn_ventana" type="button" value="Página Siguiente" onclick="AbreVentana()"> -->
 
-    <select id="slc_color">
-        <option value="Azul">Azul</option>
-        <option value="Rojo">Rojo</option>
-        <option value="Amarillo">Amarillo</option>
-        <option value="Verde">Verde</option>
-        <input id="btn_ventana" type="button" value="Modificar Color" onclick="alert()">
+<form id="fondo">
+
+    <select name="color">
+
+        <option value="yellow">Amarillo</option> 
+        <option value="red">Rojo</option> 
+        <option value="blue">Azul</option>
+        <option value="green">Verde</option>
+
+        <input id="btn_ventana" type="button" value="cambiar color" onclick=cambiacolor()>
+
     </select>
 
-    <script type="text/javascript">
-        
-        function AbreVentana () {
+</form>
 
-            var VentanaNueva = window.open();
-            VentanaNueva.document.write ("Hola");
-            
+    <script>
+
+        function cambiacolor () {
+          document.body.style.background = fondo.color.value;
         }
 
     </script>
