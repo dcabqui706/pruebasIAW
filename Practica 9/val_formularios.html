@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link href="estilo_form.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+<script>
+
+    function validacion() {
+  
+      //validación del nombre.
+      nombre = document.getElementById("nombreTxt").value;
+      if (nombre==""){
+          alert("Debes de introducir el nombre");
+          return false;
+      }
+      //fin del nombre 
+    
+    //validacion apellido.
+    apellido = document.getElementById("apellidoTxt").value;
+      if (apellido==""){
+          alert("Debes de introducir el apellido");
+          return false;
+      }
+     
+      //validar un select 
+      indice = document.getElementById("estudiosSelect").selectedIndex;
+     // alert("Mi indice es " + indice);
+      if( indice == null || indice == 0 ) {
+          alert ("Debes elegir una opción de estudios");
+          return false;
+      }
+  
+      //fin validación del select
+  
+  
+  
+      //validar el email
+      email = document.getElementById("emailTxt").value;
+      //alert(email);
+      expresionRegularEmail = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+      if (!expresionRegularEmail.test(email)){
+     // if( !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(email)) ) {
+          alert ("El email no es correcto");
+          return false;
+      }
+      //fin validación del email
+  
+  
+  
+      //validar los botones radio
+      opcionesRadio = document.getElementsByName("preguntaRadio");
+      var seleccionado = false;
+      for(var i=0; i<opcionesRadio.length; i++) {
+        if(opcionesRadio[i].checked) {
+              seleccionado = true;
+              break;  //salimos del for
+        }
+      }
+       
+      if(!seleccionado) {
+          alert ("No has seleccionado una de las dos opciones");
+          return false;
+      }
+  
+  
+  
+      /*validación del chek condiciones sobre uno sólo
+      elemento = document.getElementById("condicionesCheck");
+      if( !elemento.checked ) {
+          return false;
+      }
+      */
+  
+      //validación de los dos chek.
+      //alert ("Entro en check");
+      miFormulario = document.getElementById("formulario");
+      //alert (miFormulario.elements.length);
+    
+    }
+     
+  </script>
+
+    <form id="formulario" action="salto.html" onsubmit="return validacion()">
+
+        <center><H1>Formulario</H1><br></center>
+
+        <label>Nombre:</label> <input type="text" id="nombreTxt" name="nombreTxt" /><br>
+        
+        <label>Apellidos</label> <input type="text" id="apellidoTxt" nombre="apellidoTxt" /><br>
+
+        <label>Email:</label> <input type="text" id="emailTxt" name="emailTxt" /><br><br>
+
+        
+        
+        
+        <input type="radio" value="Hombre"      name="preguntaRadio" id="pregunta_si"/> <strong>Hombre</strong><br><br>
+        <input type="radio" value="Mujer"      name="preguntaRadio" id="pregunta_no"/> <strong>Mujer</strong> <br><br>
+        
+        <label>Ingresa aqui tu mensaje:</label><textarea id="comentarioTxtArea" name="comentarioTxtArea" placeholder="Tu mensaje aqui..." ></textarea> <br>
+
+
+        <input type="checkbox" id="publicidad"/>
+        <label>Deseo recibir publicidad en mi email</label>
+        <br>
+
+        <label><strong>Procedencia:</strong></label><br>
+            <select>
+
+                <option>Resto de la Unión Europea</option> 
+                <option>España</option> 
+                <option>Alemania</option>
+                <option>Andorra</option=>
+
+            </select><br><br>
+
+        <label><strong>Ingresa el archivo que quieras adjuntar</strong></label>
+        <input type="file"><br><br>
+
+        <center><input id="submit" type="submit" value="Enviar" /></center>
+        <center><input id="reset" type="reset" value="Borrar Datos" /></center>
+
+    </form>
+
+</body>
+</html>

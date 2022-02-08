@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link href="estilo_form.css" rel="stylesheet" type="text/css">
+    
+</head>
+    <form>
+        <h1>Formulario</h1></br>
+        <p>
+            Edad:
+            <input id="edadTxt" type="text">
+        </p>
+
+        </p>
+
+        <input id="verificar" type="button" value="Verificar Clave" onclick=validacion()>
+
+    </form>
+   
+    <script type="text/javascript">
+
+        function validacion(){
+
+        //Validacion de edad
+
+        edad = document.getElementById("edadTxt").value;
+        if(isNaN(edad) ) {
+            alert("Debes de introducir un valor númerico");
+            return false;
+        }
+
+    }
+
+    </script>
+
+</body>
+</html>
